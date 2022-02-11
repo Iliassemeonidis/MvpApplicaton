@@ -1,4 +1,4 @@
-package com.example.mvpapplicaton.view.adapter
+package com.example.mvpapplicaton.view.main.adapter
 
 interface IListPresenter<V : IItemView> {
     var itemClickListener: ((V) -> Unit)?

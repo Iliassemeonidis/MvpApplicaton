@@ -9,24 +9,21 @@ import com.example.mvpapplicaton.databinding.FragmentUsersBinding
 import com.example.mvpapplicaton.model.reposetory.GithubUsersRepo
 import com.example.mvpapplicaton.presenter.user.UsersPresenter
 import com.example.mvpapplicaton.view.BackButtonListener
-import com.example.mvpapplicaton.view.adapter.UsersRVAdapter
+import com.example.mvpapplicaton.view.main.adapter.UsersRVAdapter
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
 class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
-    companion object {
-        fun newInstance() = UsersFragment()
-    }
+
+    private var vb: FragmentUsersBinding? = null
+    var adapter: UsersRVAdapter? = null
 
     private val presenter: UsersPresenter by moxyPresenter {
         UsersPresenter(
-            GithubUsersRepo(),
+            GithubUsersRepo(), App.instance.screen,
             App.instance.router
         )
     }
-    var adapter: UsersRVAdapter? = null
-
-    private var vb: FragmentUsersBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,4 +50,8 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
     }
 
     override fun backPressed() = presenter.backPressed()
+
+    companion object {
+        fun newInstance() = UsersFragment()
+    }
 }

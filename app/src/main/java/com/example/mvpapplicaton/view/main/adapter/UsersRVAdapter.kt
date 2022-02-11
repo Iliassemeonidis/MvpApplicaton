@@ -1,9 +1,10 @@
-package com.example.mvpapplicaton.view.adapter
+package com.example.mvpapplicaton.view.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvpapplicaton.databinding.ItemViewBinding
+import com.example.mvpapplicaton.view.user.GithubUser
 
 class UsersRVAdapter(private val presenter: IUserListPresenter) :
     RecyclerView.Adapter<UsersRVAdapter.ViewHolder>() {
