@@ -6,4 +6,5 @@ import com.github.terrakok.cicerone.Screen
 interface IScreens {
     fun users(): Screen
     fun navigateTo(data: GithubUser):Screen
+    fun navigateToInfo(fork: Int) : Screen
 }
