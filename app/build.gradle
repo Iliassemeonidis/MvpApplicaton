@@ -18,6 +18,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    kapt {
+        generateStubs = true
+    }
+
     buildFeatures {
         viewBinding true
     }
@@ -49,7 +53,7 @@ dependencies {
 
     // Moxy
     implementation 'com.github.moxy-community:moxy:2.1.2'
-    kapt 'com.github.moxy-community:moxy-compiler:2.1.2'
+    annotationProcessor 'com.github.moxy-community:moxy-compiler:2.1.2'
     implementation 'com.github.moxy-community:moxy-ktx:2.1.2'
     implementation 'com.github.moxy-community:moxy-androidx:2.1.2'
 
@@ -86,6 +90,10 @@ dependencies {
 
     // room
     implementation 'androidx.room:room-runtime:2.2.6'
-    kapt 'androidx.room:room-compiler:2.2.6'
+    annotationProcessor 'androidx.room:room-compiler:2.2.6'
+
+    // Dagger
+    implementation 'com.google.dagger:dagger:2.24'
+    kapt 'com.google.dagger:dagger-compiler:2.24'
 }
 

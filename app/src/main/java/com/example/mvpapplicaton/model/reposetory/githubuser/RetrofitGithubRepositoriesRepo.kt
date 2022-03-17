@@ -21,7 +21,7 @@ INetworkStatus, private val db: Database) : IGithubRepositoriesRepo{
                             val roomUser = user.login?.let {
                                 db.userDao.findByLogin(it) } ?: throw RuntimeException("No such user in cache")
                                 val roomRepos = repositories.map {
-                                RoomGithubRepository(it.id ?: "", it.name ?: "", it.forksCount ?: 0,
+                                RoomGithubRepository(it.id , it.name , it.forksCount ,
                                     roomUser.id) }
                             db.repositoryDao.insert(roomRepos)
                             repositories
