@@ -35,11 +35,11 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
         val user = arguments?.getParcelable<GithubUser>(USER_ARG) as GithubUser
         UsersPresenter(
             AndroidSchedulers.mainThread(),
-            RetrofitGithubRepositoriesRepo(ApiHolder.api,
-                AndroidNetworkStatus(App.instance), RoomGithubRepositoriesCache(database)),
-            router,
-            user,
-            AndroidScreens()
+//            RetrofitGithubRepositoriesRepo(ApiHolder.api,
+//                AndroidNetworkStatus(App.instance), RoomGithubRepositoriesCache(database)),
+//            router,
+//            user,
+//            AndroidScreens()
         )
     }
 
